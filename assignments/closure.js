@@ -23,7 +23,7 @@ club();
 
 const c = _ => {
   let counter = 0;
-  return _ => counter++;
+  return _ => counter += 1;
 }
 
 const nc = c();
@@ -41,10 +41,10 @@ const cF = _ => {
   let counter = 0;
   return {
     increment () {
-      return counter++;
+      return counter += 1;
     },
     decrement () {
-      return counter--;
+      return counter -= 1;
     }
   }
 }
