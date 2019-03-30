@@ -58,7 +58,7 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 let fullName = [];
 
-runners.forEach((r) => fullName.push(`${r.first_name} ${r.last_name}`));
+runners.forEach(r => fullName.push(`${r.first_name} ${r.last_name}`));
 
 console.log(fullName);
 
@@ -67,7 +67,7 @@ console.log(fullName);
 
 let allCaps = [];
 
-allCaps = runners.map((r) => `${r.first_name.toUpperCase()}`);
+allCaps = runners.map(r => `${r.first_name.toUpperCase()}`);
 
 console.log(allCaps); 
 
@@ -76,7 +76,7 @@ console.log(allCaps);
 
 let largeShirts = [];
 
-largeShirts = runners.filter((r) => r.shirt_size === "L" ? r : 0);
+largeShirts = runners.filter(r => r.shirt_size === "L" ? r : 0);
 
 console.log(largeShirts);
 
@@ -94,6 +94,18 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+const donations = runners.map(r => { return { name: `${r.first_name} ${r.last_name}`, donation: r.donation }; });
+
+console.log(JSON.stringify(donations));
+
 // Problem 2
 
+const smallShirts = runners.filter(r => r.shirt_size === "XS" || r.shirt_size === "S" ? r : 0);
+
+console.log(JSON.stringify(smallShirts));
+
+smallShirts.map(r => console.log(`Name: ${r.first_name} ${r.last_name}\nEmail: ${r.email}\nSize: ${r.shirt_size}`));
+
 // Problem 3
+
+runners.forEach(r => console.log(`${r.first_name} from ${r.company_name} donated ${r.donation}. YAY!`));
